@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Toronto's homeless</title>
+  <script src="https://use.typekit.net/spd0sdw.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+      <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+  <header>
+  <article>
+    <span style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+
+      <span style="width: 20%;padding-top: 17%;">
+        <h1>Toronto's Homeless</h1>
+      </span>
+
+      <span>
+        <p style="font-size: 16rem;"> 95% </p>
+      </span>
+
+    </span>
+    <p> Discover the reality of Toronto's homeless ...</p>
+  </article>
+</header>
+<main>
+  <section class="section">
+    <div class="section__left"></div>
+    <div class="section__right">
+      <!-- Occpuancy timeline -->
+      <article data-scrollmagic>
+        <span style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+         <span  class="myChartDiv" style="margin-left: -650px;width: 550px;"> <canvas id="myChart" width="550" height="300"></canvas></span>
+          <span style=" margin-top: -300px;">
+            <h3> “The occupancy hasn’t gone down” - Paul Raftis, General Manager of City Shelters </h3>
+            <p>Despite investing an avg of $30MM year over year, the occupancy has only but risen to 95%.</p>
+          </span>
+        </span>
+      </article>
+    </div>
+  </section>
+
+  <!-- Map over toronto's shelters -->
+  <section class="section">
+    <div class="section__left">
+      <article data-scrollmagic>
+
+
+      <span style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+       
+        <div style="width:100%;height:100%;" class=default>
+
+          <div style="" id="map" class="map desk-three-forth"></div>
+        </div>
+
+        <span style="padding-right: 150px;margin-left: -150px;background-color: #000000; opacity: 0.8; padding: 20px; border-radius: 25px;">
+          <span>
+            <h3> “Our shelter system is over capacity today and we are really struggling” - Joe Cressy, Toronto City Councillor</h3>
+          </span>
+          <span style="">
+              <p> Map: 2017 homeless shelter deaths (vs 15 outside) </p>
+          </span>
+
+
+<!--           <p>In a freak mishap Ranger 3 and its pilot Captain William Buck Rogers are blown out of their trajectory into an orbit which freezes his life support systems and returns Buck Rogers to Earth five-hundred years later.</p> -->
+        </span>
+
+    </span>
+      </article>
+    </div>
+
+    <div class="section__right"></div>
+  </section>
+  <section class="section">
+    <div class="section__left"></div>
+    <div class="section__right">
+      <article data-scrollmagic>
+        <span style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+          <span style="height: 300px">
+            <section style="height: 500px; width: 500px; margin-left: -500px;margin-top: 50px;" id="chartOne"></section>
+            <!-- margin-left: -650px;width: 550px; -->
+          </span>
+
+          <span style="margin-top: -150px;">
+            <h3>"Someone is going to die. We need to wake ourselves from our inertia.", Sarah Polley, Political Activist</h3>
+            <p> Responses were disproportionately centered on affordable housing when asked what Toronto City could do to reduce poverty. This suggest the housing crisis, is bigger than than at first glance. </p>
+          <span>
+      </span>
+
+<!--         <a href="#" class="btn btn-\-ghost">Lorem</a> -->      
+</article>
+    </div>
+  </section>
+</main>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/1.3.0/jquery.scrollmagic.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/1.3.0/jquery.scrollmagic.debug.js'></script>
+<script src='https://npmcdn.com/chart.js@latest/dist/Chart.bundle.min.js'></script>
+<script src='https://cdn.zingchart.com/zingchart.min.js'></script>
+  
+    <script  src="js/index.js"></script>
+    <script  src="js/graph1.js"></script>
+    <script  src="js/radar.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp_58ypAUd_nmJlC5jl1IXordtS57_TUg&callback=initMap"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+
+    <script type="text/javascript">
+      var map;
+      //43.640355, -79.386816
+            // 43.6468724,-79.4008253 = 1
+      // 43.763454,-79.363286 = 1
+      // 43.6523121,-79.3746394 = 1
+      // 43.6550557,-79.3715427 = 2
+      // 43.6554013,-79.3764192 = 2
+      //  43.659956,-79.3764592 = 15
+      var locations = [
+
+        {lat:  43.6468724, lng: -79.4008253},
+        {lat:  43.763454, lng: -79.363286},
+        {lat:  43.6523121, lng: -79.3746394},
+
+        {lat:  43.6550557, lng: -79.3715427},
+        {lat:  43.6550557, lng: -79.3715427},
+
+        {lat:  43.6554013, lng: -79.3764192},
+
+        {lat: -43.6916737, lng: -79.2639858},
+        {lat: -43.6916737, lng: -79.2639858},
+
+        {lat: 43.659956, lng: -79.3764592},
+        {lat: 43.659956, lng: -79.3764592},
+        {lat: 43.659956, lng: -79.3764592},
+        {lat: 43.659956, lng: -79.3764592},
+        {lat: 43.659956, lng: -79.3764592},
+        {lat: 43.659956, lng: -79.3764592},
+        {lat: 43.659956, lng: -79.3764592},
+        {lat: 43.659956, lng: -79.3764592},
+        {lat: 43.659956, lng: -79.3764592},
+        {lat: 43.659956, lng: -79.3764592},
+        {lat: 43.659956, lng: -79.3764592},
+        {lat: 43.659956, lng: -79.3764592},
+        {lat: 43.659956, lng: -79.3764592},
+        {lat: 43.659956, lng: -79.3764592},
+        {lat: 43.659956, lng: -79.3764592},
+        {lat: 43.659956, lng: -79.3764592},
+
+        {lat: 43.6719373, lng: -79.3762482},
+        {lat: 43.6719373, lng: -79.3762482},
+
+        {lat: 43.65882, lng: -79.4061961},
+        {lat: 43.65882, lng: -79.4061961},
+
+        {lat: 43.6518818, lng: -79.4058885},
+        {lat: 43.6518818, lng: -79.4058885},
+        {lat: 43.6518818, lng: -79.4058885},
+      ]
+
+              // Create an array of alphabetical characters used to label the markers.
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+
+
+      // 43.638963, -79.388820
+      // 43.641870, -79.414814
+      // 43.641962, -79.412131
+      // 43.641622, -79.437841
+      function initMap() {
+        var myLatLng = {lat: 43.641622, lng: -79.437841};
+        map = new google.maps.Map(document.getElementById('map'), {
+           zoom: 12,
+           center: myLatLng,
+           
+           styles: [
+    {
+        "featureType": "all",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "saturation": 36
+            },
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 40
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            },
+            {
+                "weight": 1.2
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.locality",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#c4c4c4"
+            },
+            {
+                "weight": "0.38"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.neighborhood",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#707070"
+            },
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 21
+            },
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.business",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#be2026"
+            },
+            {
+                "lightness": "0"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "off"
+            },
+            {
+                "hue": "#ff000a"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway.controlled_access",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 18
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#575757"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            },
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#2c2c2c"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#999999"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "saturation": "-52"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 19
+            }
+        ]
+    },
+    {
+        "featureType": "transit.line",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            }
+        ]
+    }
+]
+        });
+
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+          });
+        });
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      
+
+
+
+      }
+    </script>
+<script>
+$("#chartOne-license-text").remove();
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDjmVmmiymwqr3qP10N5mZ7eL8PmEaIM1U",
+    authDomain: "village-pie.firebaseapp.com",
+    databaseURL: "https://village-pie.firebaseio.com",
+    projectId: "village-pie",
+    storageBucket: "village-pie.appspot.com",
+    messagingSenderId: "911252306865"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+
+
+</body>
+
+</html>
