@@ -10,6 +10,8 @@ var barChartData = {
   datasets: [{
     type: 'line',
     label: 'Occupancy Rate (%)',
+    fontColor: "white",
+    labelColor: "white",
     id: "Occupancy",
     backgroundColor: "white",
     data: [90, 89, 88, 87, 85, 87, 89, 91, 92, 93, 92, 95],
@@ -34,16 +36,30 @@ var ch = new Chart(ctx, {
   data: barChartData,
   options: {
     hoverMode: 'index',
+    titleFontColor: "white",
+    FontColor: "white",
+    fontColor: "white",
     title: {
       display: true,
-      text: "Toronto Shelter Occupancy Rates"
+      text: "Toronto Shelter Occupancy Rates",
+       fontColor: "white"
     },
-
+      legend: {
+       fontColor: "red"
+     },
     responsive: true,
-
+    legend: {
+            labels: {
+                fontColor: "white",
+                fontSize: 18
+            }
+        },
     scales: {
       xAxes: [{
-        stacked: false
+        stacked: false,
+        ticks: {
+          fontColor: "white",
+        }
       }],
 
       yAxes: [{
@@ -52,21 +68,11 @@ var ch = new Chart(ctx, {
         position: "left",
         id: "Occupancy",
         ticks: {
+          fontColor: "white",
           max: 100,
           min: 80
         }
       }, 
-      {
-        stacked: true,
-        type: 'linear',
-        id: 'B',
-        type: 'linear',
-        position: 'right',
-        ticks: {
-          max: 100,
-          min: 0
-        }
-      }
       // {
       //   stacked: false,
       //   type: 'linear',
