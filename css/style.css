@@ -15,8 +15,14 @@ body {
   font-family: "acta-display";
   font-weight: 300;
   background: #bcbcbc;
+
 }
 
+/*canvas {
+    width: 100% !important;
+    height: 400px !important;
+}
+*/
 html, body {
   font-size: 62.5%;
 }
@@ -36,7 +42,7 @@ h1, h2, h3, h4, h4, h5, h6 {
           flex-flow: row wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
+          align-items: inherit;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -130,10 +136,10 @@ header article p {
   content: "Chapter 03";
 }
 .section:nth-child(3) {
-  background: #686860;
+  background: #419D78;
 }
 .section:nth-child(4) {
-  background: #9C9C2C;
+  background: #E0A458;
 }
 .section:nth-child(4):before {
   content: "End";
