@@ -4,33 +4,33 @@ Chart.defaults.global.defaultFontFamily = "Lato";
 Chart.defaults.global.defaultFontSize = 18;
 
 var marksData = {
-    labels: ['Health', 'Food', 'Rent', "Children", "Minimum Wage"],
+    labels: ['Housing', 'Wage', 'Health', "Food"],
   	datasets: [{
 	    label: "How does poverty affect you?",
-	    backgroundColor: "rgba(200,0,0,0.6)",
-	    borderColor: "rgba(200,0,0,0.6)",
-	    fill: false,
+	    backgroundColor: "rgba(163, 124, 64,0.6)",
+	    borderColor: "rgba(163, 124, 64,0.6)",
+	    fill: true,
 	    radius: 6,
 	    pointRadius: 6,
 	    pointBorderWidth: 3,
 	    pointBackgroundColor: "orange",
-	    pointBorderColor: "rgba(200,0,0,0.6)",
+	    pointBorderColor: "rgba(163, 124, 64,0.6)",
 	    pointHoverRadius: 10,
-	    data: [68, 64, 95, 44, 10],
+	    data: [69, 38, 36, 70],
 	    borderDash: [10,5]
   }, 
  {
 	    label: "What can the City of Toronto do to reduce poverty?",
-	    backgroundColor: "#F1F7EE", // legend box filler colour
+	    backgroundColor: "rgba(220,220,220,0.4)", // legend box filler colour
 	    borderColor: "#F1F7EE", // line colour
-	    fill: false,
+	    fill: true,
 	    radius: 6,
 	    pointRadius: 6,
 	    pointBorderWidth: 3,
 	    pointBackgroundColor: "#E8DAB2",
 	    pointBorderColor: "#36413E",
 	    pointHoverRadius: 10,
-	    data: [26, 16, 69, 84, 10],
+	    data: [118, 51, 41, 71],
 	    borderDash: [10,5]
   }
   ]
@@ -53,7 +53,7 @@ var chartOptions = {
       maxTicksLimit: 3,
       beginAtZero: true,
       min: 0,
-      max: 100,
+      max: 120,
       stepSize: 20,
       fontColor: "#000000", // scale number colors
   	  display: false, // disable the tick numbers
