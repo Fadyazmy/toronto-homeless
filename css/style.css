@@ -191,5 +191,23 @@ a {
 
 a:hover{
     background: #F7FFDD;
-
 };
+
+.footer  {
+      background: #000000;
+}
+
+/*FOOTER*/
+.foot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 2rem;
+  color: transparentize(white, 0.25);
+  text-align: center;
+}
+
+a.footer:hover {
+  background: #F45B69;
+}

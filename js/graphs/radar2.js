@@ -11,7 +11,7 @@ var marksData = {
 	    borderColor: "rgba(163, 124, 64,0.6)",
 	    fill: true,
 	    radius: 6,
-	    pointRadius: 6,
+      pointRadius: 4,
 	    pointBorderWidth: 3,
 	    pointBackgroundColor: "orange",
 	    pointBorderColor: "rgba(163, 124, 64,0.6)",
@@ -25,14 +25,28 @@ var marksData = {
 	    borderColor: "#F1F7EE", // line colour
 	    fill: true,
 	    radius: 6,
-	    pointRadius: 6,
+      pointRadius: 4,
 	    pointBorderWidth: 3,
 	    pointBackgroundColor: "#E8DAB2",
 	    pointBorderColor: "#36413E",
 	    pointHoverRadius: 10,
 	    data: [118, 51, 41, 71],
 	    borderDash: [10,5]
-  }
+  },
+   {
+      label: "What do you think is driving poverty in Toronto?",
+      backgroundColor: "rgba(255, 111, 89,0.4)", // legend box filler colour
+      borderColor: "#F1F7BE", // line colour
+      fill: true,
+      radius: 2,
+      pointRadius: 4,
+      pointBorderWidth: 3,
+      pointBackgroundColor: "#E8DAB2",
+      pointBorderColor: "#36413E",
+      pointHoverRadius: 10,
+      data: [112, 81, 71, 56],
+      borderDash: [10,5]
+  },
   ]
 };
 

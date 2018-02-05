@@ -6,6 +6,7 @@
   <title>Toronto's homeless</title>
   <script src="https://use.typekit.net/spd0sdw.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,20 +14,20 @@
 <body>
 
   <header>
-      <article>
-        <span style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-
-          <span style="width: 20%;padding-top: 17%;">
-            <h1>Toronto's Homeless</h1>
-          </span>
-
-          <span>
-            <p style="font-size: 16rem;"> 95%<span style="font-size: 17px;">occupancy </span> </p>
-          </span>
-
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113449618-1"></script>
+    <script type="text/javascript" src="js/ga.js"></script>
+    <article id="one" class="chapter">
+      <span style="display: flex; flex-wrap: wrap; justify-content: space-between;padding-top: 13%;">
+        <span style="width: 20%;padding-top: 17%;">
+          <h1>Toronto's Homeless</h1>
         </span>
+      <span>
+        <p style="font-size: 16rem;"> 95%<span style="font-size: 17px;">occupancy </span> </p>
+      </span>
+      </span>
         <p> Discover the reality of Toronto's homeless ...</p>
-      </article>
+    </article>
   </header>
 <main>
 
@@ -40,8 +41,7 @@
             <span style="display: flex; flex-direction: row; justify-content: space-between;">
              <div  style="width: 45%; "> 
                     <canvas style="height:400px" id="canvas"></canvas>
-<!--                 <span  class="myChartDiv" style="width: 550px;"> <canvas id="myChart" width="550" height="300"></canvas></span>
- -->             </div>
+             </div>
               <span style=" width: 50%">
                 <h3> “The occupancy hasn’t gone down” - Paul Raftis, General Manager of City Shelters </h3>
                 <p>Despite investing an avg of <b>$30MM</b> year over year, the occupancy has only but risen to 95%.</p>
@@ -86,13 +86,10 @@
             <span style="display: flex; flex-direction: row; justify-content: space-between;">
              <div  style="width: 50%; "> 
                 <canvas id="marksChart" width="600" height="400"></canvas>
-                <!-- <section style="height: 400px; margin-top: -50px;" id="chartOne"></section> -->
-
-<!--                 <span  class="myChartDiv" style="width: 550px;"> <canvas id="myChart" width="550" height="300"></canvas></span>
- -->             </div>
+              </div>
               <span style=" width: 50%">
                     <h3>"Someone is going to die. We need to wake ourselves from our inertia." - Sarah Polley, Political Activist</h3>
-                    <p> Responses were disproportionately centered on affordable housing when asked what Toronto City could do to reduce poverty. <br> <br>This suggest two things, security should be at the forefront of our concern and more qualatative research is needed to hear their voices. </p>
+                    <p> Responses from a targeted survey carried out by the City in 2015, were disproportionately centered on affordable housing. <br> <br>This suggest two things, shelter should be at the forefront of our concern and more qualatative research is needed to hear their voices. </p>
               </span>
             </span>
         </div>
@@ -109,22 +106,26 @@
       <!-- Occpuancy timeline -->
       <article data-scrollmagic>
         <span style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-        <!-- <span  class="myChartDiv" style="margin-left: -650px;width: 550px;"> <canvas id="myChart" width="550" height="300"></canvas></span> -->
-          <span style=" ">
+          <span style=" margin-top: 150px;">
             <h3> References </h3>
-            <p>Slide 1: <a href="https://goo.gl/Q11NwT" style="text-decoration:none;"> Daily Shelter Capacity - Toronto </a></p>
-            <p>Slide 2: <a href="https://goo.gl/6ZmZ1g"> 2016 Statistics on Deaths of Shelter Residents </a></p>
-            <p>Slide 3: <a href="https://goo.gl/hUrmDr"> Poverty Reduction Strategy Consultation </a></p>
+            <p>Chapter 01: <a href="https://goo.gl/Q11NwT" style="text-decoration:none;"> Daily Shelter Capacity - Toronto </a></p>
+            <p>Chapter 02: <a href="https://goo.gl/6ZmZ1g"> 2016 Statistics on Deaths of Shelter Residents </a></p>
+            <p>Chapter 03: <a href="https://goo.gl/hUrmDr"> Poverty Reduction Strategy Consultation </a></p>
           </span>
         </span>
       </article>
     </div>
+  <div style="font-size: 14px; position: relative; bottom: -60px; line-height: 2rem;" class="footer">
+    <a class="footer" style="color: white " href="https://fadyazmy.github.io/"> 
+      &nbsp;Made by Fady Azmy &hearts;&nbsp;
+    </a> 
+  </div>
   </section>
 
 
 </main>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/1.3.0/jquery.scrollmagic.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/1.3.0/jquery.scrollmagic.debug.js'></script>
 <script src='https://cdn.zingchart.com/zingchart.min.js'></script>
@@ -132,13 +133,13 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp_58ypAUd_nmJlC5jl1IXordtS57_TUg&callback=initMap"></script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"> </script>
 
-    <script src="js/index.js"></script>
-    <script src="js/graphs/radar.js"></script>
-    <script src="js/maps.js"></script>
-    <script src="js/firebase.js"></script>
-    <script defer src="js/graphs/occupancyGraph.js"></script>
-        <script defer src="js/graphs/radar2.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js'></script>
+<script src="js/index.js"></script>
+<script src="js/graphs/radar.js"></script>
+<script src="js/maps.js"></script>
+<script src="js/firebase.js"></script>
+<script defer src="js/graphs/occupancyGraph.js"></script>
+<script defer src="js/graphs/radar2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js'></script>
 
 
 
